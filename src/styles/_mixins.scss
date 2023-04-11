@@ -1,6 +1,18 @@
-@mixin container($padding: 0) {
+@import "variables";
+
+@mixin container($padding: 0, $paddingDesktop: 0 2rem) {
   padding: $padding;
   @media (min-width: 1200px) {
-    max-width: 75rem;
+    padding: $paddingDesktop;
   }
+}
+
+@mixin coloredContainer($padding: 0.75rem 1.25rem) {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: $padding;
+  border-radius: 0.5rem;
+  // primary faded comes from _variables.scss
+  background: $primaryFaded;
 }

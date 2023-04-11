@@ -15,7 +15,7 @@ const Nav = () => {
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
         />
-        <a href="/" aria-label="logo">
+        <a href="/" aria-label="logo" className={styles.logo}>
           <img
             src={Logo}
             alt="Logo"
