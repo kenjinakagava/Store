@@ -1,0 +1,37 @@
+.hamburger {
+  width: 2rem;
+  height: 1.0625rem;
+  position: relative;
+  background: none;
+  border: none;
+}
+
+.rectangle {
+  width: 2rem;
+  height: 0.1875rem;
+  background: #272727;
+  margin-bottom: 0.25rem;
+  transition: 0.3s ease-out;
+}
+
+.hidden {
+  width: 0;
+  transition: 0s;
+}
+
+.top {
+  position: absolute;
+  transform: rotate(40deg);
+}
+
+.bottom {
+  position: absolute;
+  top: 0.3125rem;
+  transform: rotate(-40deg);
+}
+
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+}

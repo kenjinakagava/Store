@@ -1,0 +1,6 @@
+@mixin container($padding: 0) {
+  padding: $padding;
+  @media (min-width: 1200px) {
+    max-width: 75rem;
+  }
+}

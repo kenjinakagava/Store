@@ -1,0 +1,46 @@
+.menu {
+  position: absolute;
+  top: 4.875rem;
+  width: 100%;
+  left: 0;
+  padding-left: 1rem;
+  height: 0;
+  transition: 0.3s ease-out;
+}
+
+.open {
+  height: auto;
+  padding-top: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+
+  .item {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+  }
+}
+
+.item {
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding-left: unset;
+    position: static;
+    gap: 1rem;
+    height: 100%;
+    order: 1;
+  }
+  .item {
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 0;
+  }
+}
