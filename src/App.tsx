@@ -1,14 +1,15 @@
-import "./App.css";
 import Nav from "./components/Nav/Nav";
 import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header>
         <Nav />
       </Header>
-    </div>
+      <Hero />
+    </>
   );
 }
 

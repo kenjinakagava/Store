@@ -9,13 +9,19 @@ const MobileMenu = ({ isMenuOpen }: MobileMenuProps) => {
   return (
     <ul className={classNames(styles.menu, { [styles.open]: isMenuOpen })}>
       <li className={styles.item}>
-        <a href="/home">Home</a>
+        <a href="/">Home</a>
       </li>
       <li className={styles.item}>
         <a href="/store">Store</a>
       </li>
       <li className={styles.item}>
         <a href="/contact">Contact</a>
+      </li>
+      <li className={styles.i18n}>
+        <select name="language" id="language-select" className={styles.select}>
+          <option value="ENG">ENG</option>
+          <option value="PTBR">PT-BR</option>
+        </select>
       </li>
     </ul>
   );

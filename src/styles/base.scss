@@ -5,6 +5,16 @@
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex-grow: 1;
+}
+
 ul {
   list-style: none;
 }
