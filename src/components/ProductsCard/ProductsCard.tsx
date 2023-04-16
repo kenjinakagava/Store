@@ -12,7 +12,15 @@ const ProductsCard = (props: ProductsCardProps) => {
   return (
     <div className={styles.card}>
       <div className={styles["image-container"]}>
-        <img src={props.image} alt={props.title} className={styles.image} />
+        <img
+          src={props.image}
+          alt={props.title}
+          className={styles.image}
+          width={318}
+          height={340}
+          decoding="async"
+          loading="lazy"
+        />
       </div>
       <div className={styles["text-container"]}>
         <h3 className={styles.title}>{props.title}</h3>

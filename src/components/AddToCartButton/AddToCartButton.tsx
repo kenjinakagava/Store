@@ -1,5 +1,6 @@
 import styles from "./AddToCartButton.module.scss";
 import Cart from "../../assets/svgs/Cart.svg";
+import Icon from "../Icon/Icon";
 
 interface AddToCartButtonProps {
   image: string;
@@ -9,17 +10,13 @@ interface AddToCartButtonProps {
 
 const AddToCartButton = (props: AddToCartButtonProps) => {
   return (
-    <button aria-label="add to cart">
-      <img
-        src={Cart}
-        alt="cart"
-        aria-hidden="true"
-        width={30}
-        height={30}
-        loading="lazy"
-        decoding="async"
-      />
-    </button>
+    <Icon
+      ariaLabel="add to cart"
+      icon={Cart}
+      description={"Add to Cart"}
+      type={"link"}
+      loading="lazy"
+    />
   );
 };
 

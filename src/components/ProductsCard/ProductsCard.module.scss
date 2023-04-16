@@ -8,8 +8,8 @@
 
 .image-container {
   position: relative;
-  min-height: 31.25rem;
-  max-height: 31.25rem;
+  min-height: 21.25rem;
+  max-height: 21.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,8 @@
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
   padding: 1rem 2rem;
-  max-height: 31.25rem;
+  height: auto;
+  max-height: 21.25rem;
 }
 
 .text-container {
@@ -67,7 +68,7 @@
 .price-container {
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1300px) {
   .card {
     max-width: 25rem;
   }

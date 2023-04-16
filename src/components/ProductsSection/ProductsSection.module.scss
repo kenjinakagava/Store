@@ -1,11 +1,14 @@
+@import "../../styles/mixins";
+
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 }
 
 .products {
-  padding: 5.625rem 1rem 7.8125rem 1rem;
+  @include section();
 }
 
 .title {
@@ -30,8 +33,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
-    gap: unset;
-    row-gap: 2rem;
   }
 }
 

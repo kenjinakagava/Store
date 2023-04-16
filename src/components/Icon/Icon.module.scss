@@ -1,0 +1,15 @@
+@import "../../styles/mixins";
+
+.description {
+  display: none;
+}
+
+.color-container {
+  @include coloredContainer();
+}
+
+@media (min-width: 1024px) {
+  .description {
+    display: inline;
+  }
+}

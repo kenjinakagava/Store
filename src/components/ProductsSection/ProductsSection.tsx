@@ -1,29 +1,17 @@
+import { useProductsApi } from "../../hooks/useProductsApi";
+import { productsApiProps } from "../../interfaces/Product";
+import CategoryToggler from "../CategoryToggler/CategoryToggler";
+import CategoryTogglerMobile from "../CategoryTogglerMobile/CategoryTogglerMobile";
 import ProductsCard from "../ProductsCard/ProductsCard";
 import styles from "./ProductsSection.module.scss";
-import { useState, useEffect } from "react";
-
-interface productsApiProps {
-  image: string;
-  title: string;
-  price: number;
-  id: number;
-}
+import MediaQuery from "react-responsive";
 
 // Define an interface for an array that accepts the properties defined in the productsApiProps interface
 // we'll use this new interface to type the data we'll get from the api response
-interface productsApiPropsList extends Array<productsApiProps> {}
 
 const ProductsSection = () => {
-  const [apiResponse, setApiResponse] = useState<productsApiPropsList>();
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => setApiResponse(data));
-  }, []);
-  console.log(apiResponse);
+  const { apiResponse, activeCategory, categories, setActiveCategory } =
+    useProductsApi();
 
   return (
     <section className={styles.products}>
@@ -31,10 +19,26 @@ const ProductsSection = () => {
       <p className={styles.description}>
         Check out what we have in store for you
       </p>
+      {/* Render mobile or desktop CategoryToggler based on screen width */}
+      <MediaQuery maxWidth={767}>
+        <CategoryTogglerMobile
+          categories={categories}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
+      </MediaQuery>
+      <MediaQuery minWidth={768}>
+        <CategoryToggler
+          categories={categories}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
+      </MediaQuery>
       <div className={styles.container}>
         {apiResponse
-          // Show products from id 1 to 6
-          ?.filter((product) => product.id <= 6)
+          ?.filter(
+            (product: productsApiProps) => product.category === activeCategory
+          )
           .map((data) => (
             <ProductsCard
               key={data.id}
