@@ -51,7 +51,7 @@ nav {
     display: flex;
     align-items: center;
     border-right: 1px solid #e5e5e5;
-    padding-right: 1rem;
+    padding-right: 4rem;
   }
 }
 
@@ -63,6 +63,5 @@ nav {
 
 @media (min-width: 1200px) {
   .logo {
-    padding-right: 2rem;
   }
 }

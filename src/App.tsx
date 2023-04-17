@@ -1,17 +1,17 @@
-import Nav from "./components/Nav/Nav";
-import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import ProductsSection from "./components/ProductsSection/ProductsSection";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Store from "./pages/Store";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <>
-      <Header>
-        <Nav />
-      </Header>
-      <Hero />
-      <ProductsSection />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
   );
 }
 

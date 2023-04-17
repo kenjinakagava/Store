@@ -11,12 +11,15 @@
   padding: $padding;
 }
 
-@mixin coloredContainer($padding: 0.75rem 1.25rem) {
+@mixin coloredContainer(
+  $padding: 0.75rem 1.25rem,
+  $backgroundColor: $primaryFaded
+) {
   display: flex;
   gap: 1rem;
   align-items: center;
   padding: $padding;
   border-radius: 0.5rem;
   // primary faded comes from _variables.scss
-  background: $primaryFaded;
+  background: $backgroundColor;
 }
