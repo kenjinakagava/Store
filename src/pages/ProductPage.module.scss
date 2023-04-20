@@ -1,0 +1,58 @@
+@import "../styles/mixins";
+
+.container {
+  @include container();
+}
+
+.title {
+  margin: 1.25rem 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  max-width: 33.75rem;
+}
+
+.price {
+  color: #0074d9;
+  font-weight: 500;
+  font-size: 1.625rem;
+  line-height: 3.625rem;
+}
+
+.buy-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  button {
+    width: 100%;
+  }
+}
+
+.paragraph {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.4375rem;
+}
+
+@media (min-width: 1024px) {
+  .flex-container {
+    display: flex;
+  }
+  .info {
+    margin-left: 1rem;
+  }
+  .buy-info {
+    display: inline-flex;
+    flex-direction: column;
+  }
+}

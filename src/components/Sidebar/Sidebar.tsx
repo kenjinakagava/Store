@@ -14,7 +14,6 @@ const Sidebar = (props: SidebarProps) => {
     const value = event.currentTarget.textContent;
     props.setActiveCategory(value ? value : "");
   };
-  console.log(props.activeCategory);
   return (
     <>
       {props.isOpen ? <CloseArea setIsOpen={props.setIsOpen} /> : null}

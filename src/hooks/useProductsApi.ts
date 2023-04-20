@@ -17,5 +17,10 @@ export const useProductsApi = () => {
     });
   }, []);
 
-  return { apiResponse, activeCategory, categories, setActiveCategory };
+  return {
+    apiResponse,
+    activeCategory,
+    categories,
+    setActiveCategory,
+  };
 };

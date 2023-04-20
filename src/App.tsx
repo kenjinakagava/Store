@@ -1,15 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Store from "./pages/Store";
-import Contact from "./pages/Contact";
+import { useProductsApi } from "./hooks/useProductsApi";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
+  const { apiResponse, activeCategory, categories, setActiveCategory } =
+    useProductsApi();
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/contact" element={<Contact />} />
+        {apiResponse?.map((product) => (
+          <Route
+            key={product.id}
+            path={`/product/${product.id}`}
+            element={<ProductPage {...product} />}
+          ></Route>
+        ))}
       </Routes>
     </Router>
   );

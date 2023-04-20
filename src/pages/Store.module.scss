@@ -1,6 +1,0 @@
-@import "../styles/mixins";
-
-main {
-  @include container($padding: 0rem 1rem, $paddingDesktop: 0rem 2rem);
-  display: flex;
-}

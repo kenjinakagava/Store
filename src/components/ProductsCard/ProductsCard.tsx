@@ -6,12 +6,13 @@ interface ProductsCardProps {
   image: string;
   title: string;
   price: number;
+  id: number;
 }
 
 const ProductsCard = (props: ProductsCardProps) => {
   return (
     <div className={styles.card}>
-      <div className={styles["image-container"]}>
+      <a href={`product/${props.id}`} className={styles["image-container"]}>
         <img
           src={props.image}
           alt={props.title}
@@ -21,7 +22,7 @@ const ProductsCard = (props: ProductsCardProps) => {
           decoding="async"
           loading="lazy"
         />
-      </div>
+      </a>
       <div className={styles["text-container"]}>
         <h3 className={styles.title}>{props.title}</h3>
         <div className={styles["buy-info-container"]}>

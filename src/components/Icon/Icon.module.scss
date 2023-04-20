@@ -2,6 +2,9 @@
 
 .description {
   display: none;
+  &.show {
+    display: inline;
+  }
 }
 
 .color-container {
@@ -11,5 +14,8 @@
 @media (min-width: 1024px) {
   .description {
     display: inline;
+  }
+  .color-container {
+    height: fit-content;
   }
 }

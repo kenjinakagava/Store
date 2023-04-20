@@ -2,7 +2,8 @@ export interface productsApiProps {
   image: string;
   title: string;
   price: number;
-  rating?: { rate: number; counter: number };
+  description?: string;
+  rating?: { rate: number; count: number };
   id: number;
   category?: string;
 }

@@ -42,6 +42,7 @@ const ProductsSection = () => {
           .map((data) => (
             <ProductsCard
               key={data.id}
+              id={data.id}
               image={data.image}
               title={data.title}
               price={data.price}

@@ -11,12 +11,6 @@ const MobileMenu = ({ isMenuOpen }: MobileMenuProps) => {
       <li className={styles.item}>
         <a href="/">Home</a>
       </li>
-      <li className={styles.item}>
-        <a href="/store">Store</a>
-      </li>
-      <li className={styles.item}>
-        <a href="/contact">Contact</a>
-      </li>
       <li className={styles.i18n}>
         <select name="language" id="language-select" className={styles.select}>
           <option value="ENG">ENG</option>

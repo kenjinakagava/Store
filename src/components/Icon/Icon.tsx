@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import styles from "./Icon.module.scss";
 
 interface IconProps {
@@ -7,9 +8,13 @@ interface IconProps {
   type: "button" | "link";
   loading?: "lazy" | "eager";
   ariaLabel: string;
+  forceShowDescription?: boolean;
 }
 
 const Icon = (props: IconProps) => {
+  const descriptionClass = classNames(styles.description, {
+    [styles.show]: props.forceShowDescription,
+  });
   if (props.type === "link") {
     return (
       <a
@@ -18,7 +23,7 @@ const Icon = (props: IconProps) => {
         className={styles["color-container"]}
       >
         {props.description ? (
-          <span className={styles.description}>{props.description}</span>
+          <span className={descriptionClass}>{props.description}</span>
         ) : null}
         <img
           src={props.icon}
@@ -37,7 +42,7 @@ const Icon = (props: IconProps) => {
         className={styles["color-container"]}
       >
         {props.description ? (
-          <span className={styles.description}>{props.description}</span>
+          <span className={descriptionClass}>{props.description}</span>
         ) : null}
         <img
           src={props.icon}

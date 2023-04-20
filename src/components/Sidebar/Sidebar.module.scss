@@ -2,7 +2,7 @@
   display: none;
   &.open {
     display: block;
-    position: absolute;
+    position: fixed;
     //padding-top: 6.9375rem;
     padding-top: 1rem;
     padding-left: 2rem;
@@ -53,6 +53,7 @@
   .wrapper {
     display: flex;
     flex-direction: column;
+    position: fixed;
     width: 11.9375rem;
     border-right: 1px solid #e5e5e5;
     padding-top: 1rem;
@@ -60,8 +61,6 @@
   }
   .title {
     border-bottom: none;
-  }
-  .subtitle {
   }
   .sidebar {
     display: block;
