@@ -14,7 +14,7 @@ const ProductsSection = () => {
     useProductsApi();
 
   return (
-    <section className={styles.products}>
+    <section className={styles.products} id="products">
       <h2 className={styles.title}>Products</h2>
       <p className={styles.description}>
         Check out what we have in store for you
@@ -42,6 +42,7 @@ const ProductsSection = () => {
           .map((data) => (
             <ProductsCard
               key={data.id}
+              quantity={1}
               id={data.id}
               image={data.image}
               title={data.title}

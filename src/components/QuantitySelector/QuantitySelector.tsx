@@ -1,12 +1,18 @@
 import { useState } from "react";
 import styles from "./QuantitySelector.module.scss";
 
-const QuantitySelector = () => {
-  const [quantity, setQuantity] = useState(1);
+interface QuantitySelectorProps {
+  quantity: number;
+  setQuantity: React.Dispatch<React.SetStateAction<number>>;
+}
 
+const QuantitySelector = ({ quantity, setQuantity }: QuantitySelectorProps) => {
   const adjustQuantity = (amount: number) => {
     setQuantity((currentQuantity) => {
+      // set new Quantity
       const newQuantity = currentQuantity + amount;
+
+      // make sure quantity always is at least 1
       if (newQuantity < 1) {
         return 1;
       } else {

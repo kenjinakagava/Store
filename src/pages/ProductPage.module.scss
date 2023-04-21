@@ -5,13 +5,18 @@
 }
 
 .title {
-  margin: 1.25rem 0;
+  margin-bottom: 1.25rem;
+}
+
+.flex-container {
+  margin-top: 3rem;
 }
 
 .image-container {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  min-width: 50%;
 }
 
 .product-image {

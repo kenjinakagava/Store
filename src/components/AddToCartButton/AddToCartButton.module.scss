@@ -1,2 +1,8 @@
+@import "../../styles/mixins";
+
 .message {
+}
+
+.color-container {
+  @include coloredContainer();
 }

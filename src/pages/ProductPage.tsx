@@ -5,15 +5,17 @@ import { productsApiProps } from "../interfaces/Product";
 import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
 import AddToCartButton from "../components/AddToCartButton/AddToCartButton";
 import StarRating from "../components/StarRating/StarRating";
+import { useState } from "react";
 
 const ProductPage = (props: productsApiProps) => {
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <>
       <Header>
         <Nav />
       </Header>
       <main className={styles.container}>
-        <h1 className={styles.title}>{props.title}</h1>
         <div className={styles["flex-container"]}>
           <div className={styles["image-container"]}>
             <img
@@ -26,6 +28,7 @@ const ProductPage = (props: productsApiProps) => {
             />
           </div>
           <div className={styles.info}>
+            <h1 className={styles.title}>{props.title}</h1>
             <div className={styles.ratings}>
               <StarRating
                 rating={props.rating?.rate}
@@ -34,12 +37,13 @@ const ProductPage = (props: productsApiProps) => {
             </div>
             <div className={styles["buy-info"]}>
               <h2 className={styles.price}>$ {props.price}</h2>
-              <QuantitySelector />
+              <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
               <AddToCartButton
+                id={props.id}
+                quantity={quantity}
                 image={props.image}
                 title={props.title}
                 price={props.price}
-                forceShowDescription={true}
               />
             </div>
           </div>

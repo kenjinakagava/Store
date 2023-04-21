@@ -1,15 +1,8 @@
+import { CartItem } from "../../contexts/CartContext";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
-import StarRating from "../StarRating/StarRating";
 import styles from "./ProductsCard.module.scss";
 
-interface ProductsCardProps {
-  image: string;
-  title: string;
-  price: number;
-  id: number;
-}
-
-const ProductsCard = (props: ProductsCardProps) => {
+const ProductsCard = (props: CartItem) => {
   return (
     <div className={styles.card}>
       <a href={`product/${props.id}`} className={styles["image-container"]}>

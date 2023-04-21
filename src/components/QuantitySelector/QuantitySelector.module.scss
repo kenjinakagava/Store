@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  width: 100%;
   border: 1px solid $primary;
   align-items: center;
 }
@@ -29,6 +28,7 @@
   border-radius: 4px;
   font-weight: 500;
   font-size: 1.25rem;
+  padding: 0 1rem;
 }
 
 @media (min-width: 1024px) {

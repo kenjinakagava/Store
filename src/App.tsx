@@ -1,25 +1,46 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import { useProductsApi } from "./hooks/useProductsApi";
 import ProductPage from "./pages/ProductPage";
+import { CartContext, CartItem, CartProvider } from "./contexts/CartContext";
+import { useState } from "react";
+import useFetch from "./hooks/useFetch";
+import { productsApiProps } from "./interfaces/Product";
 
 function App() {
-  const { apiResponse, activeCategory, categories, setActiveCategory } =
-    useProductsApi();
-
+  const { apiRes, isLoading, error } = useFetch<productsApiProps>(
+    "https://fakestoreapi.com/products/"
+  );
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  //const { apiResponse } = useProductsApi();
+  if (isLoading === true) return <div>loading</div>;
+  if (error !== null) {
+    console.log(error);
+    return (
+      <div>
+        error loading products from fakestoreapi, check if this link still
+        works:{" "}
+        <a href="https://fakestoreapi.com/products/">
+          https://fakestoreapi.com/products/
+        </a>
+      </div>
+    );
+  }
+  console.log(cartItems);
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {apiResponse?.map((product) => (
-          <Route
-            key={product.id}
-            path={`/product/${product.id}`}
-            element={<ProductPage {...product} />}
-          ></Route>
-        ))}
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {apiRes?.map((product) => (
+            <Route
+              key={product?.id}
+              path={`/product/${product?.id}`}
+              element={<ProductPage {...product} />}
+            />
+          ))}
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -18,7 +18,7 @@ const HeroTransparentCard = () => {
         <p className={styles.paragraph}>
           From Clothings to Hardware, Teq Store's got you
         </p>
-        <a href="/store" className={styles.cta}>
+        <a href="#products" className={styles.cta}>
           Discover our products
         </a>
       </div>
