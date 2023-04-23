@@ -1,10 +1,10 @@
 import styles from "./ProductPage.module.scss";
-import Header from "../components/Header/Header";
-import Nav from "../components/Nav/Nav";
-import { productsApiProps } from "../interfaces/Product";
-import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
-import AddToCartButton from "../components/AddToCartButton/AddToCartButton";
-import StarRating from "../components/StarRating/StarRating";
+import Header from "../../components/Header/Header";
+import Nav from "../../components/Nav/Nav";
+import { productsApiProps } from "../../interfaces/Product";
+import QuantitySelector from "../../components/QuantitySelector/QuantitySelector";
+import AddToCartButton from "../../components/AddToCartButton/AddToCartButton";
+import StarRating from "../../components/StarRating/StarRating";
 import { useState } from "react";
 
 const ProductPage = (props: productsApiProps) => {
@@ -37,7 +37,11 @@ const ProductPage = (props: productsApiProps) => {
             </div>
             <div className={styles["buy-info"]}>
               <h2 className={styles.price}>$ {props.price}</h2>
-              <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+              <QuantitySelector
+                quantity={quantity}
+                setQuantity={setQuantity}
+                id={props.id}
+              />
               <AddToCartButton
                 id={props.id}
                 quantity={quantity}

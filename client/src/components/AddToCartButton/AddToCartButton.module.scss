@@ -3,6 +3,7 @@
 .message {
 }
 
-.color-container {
+.button {
   @include coloredContainer();
+  cursor: pointer;
 }

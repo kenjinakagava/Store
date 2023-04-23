@@ -37,7 +37,7 @@ const AddToCartButton = (props: AddToCartButtonProps) => {
     <>
       <button
         aria-label={"Add item to cart"}
-        className={styles["color-container"]}
+        className={styles.button}
         onClick={() => addToCart(props)}
       >
         <span className={styles.description}>Add item to cart</span>
