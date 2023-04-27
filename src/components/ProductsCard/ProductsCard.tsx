@@ -21,13 +21,13 @@ const ProductsCard = (props: CartItem) => {
         />
       </a>
       <div className={styles["text-container"]}>
-        <h3 className={styles.title}>{props.title}</h3>
+        <h3 className={styles.title}>{t(props.title)}</h3>
         <div className={styles["buy-info-container"]}>
           <div className={styles["price-container"]}>
             <span className={styles.topper}>{t("Price")}:</span>
-            <h3 className={styles.price}>{`${symbol} ${
+            <h3 className={styles.price}>{`${symbol} ${(
               props.price * exchangeRate
-            }`}</h3>
+            ).toFixed(2)}`}</h3>
           </div>
           <AddToCartButton {...props} />
         </div>

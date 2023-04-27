@@ -39,8 +39,16 @@ const QuantitySelector = ({
       const existingItemIndex = cartItems.findIndex(
         (cartItem) => cartItem.id === id
       );
+      // get cartItems
       const updatedCartItems = [...cartItems];
-      updatedCartItems[existingItemIndex].quantity += amount;
+      // check if the quantity amount will go below 1
+      if (updatedCartItems[existingItemIndex].quantity + amount < 1) {
+        // prevent it from going below 1
+        updatedCartItems[existingItemIndex].quantity = 1;
+      } else {
+        updatedCartItems[existingItemIndex].quantity += amount;
+      }
+      // update the state and cause a rerender
       setCartItems(updatedCartItems);
     }
   };

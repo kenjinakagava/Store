@@ -10,7 +10,7 @@ function App() {
   const { apiRes, isLoading, error } = useFetch<productsApiProps>(
     "https://fakestoreapi.com/products/"
   );
-  if (isLoading === true) return <div>loading</div>;
+  if (isLoading === true) return <div></div>;
   if (error !== null) {
     console.log(error);
     return (
@@ -29,7 +29,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/" element={<Home />} />
           {apiRes?.map((product) => (
             <Route
               key={product?.id}

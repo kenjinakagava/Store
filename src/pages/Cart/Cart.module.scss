@@ -15,6 +15,7 @@ main {
 .price {
   display: flex;
   align-items: center;
+  min-width: 3.75rem;
 }
 
 .title {
@@ -59,7 +60,7 @@ main {
 }
 
 .product-preview {
-  max-width: 5.84625rem;
+  width: 5.84625rem;
   max-height: 4.375rem;
   padding-right: 1rem;
 }
@@ -90,6 +91,8 @@ main {
   font-size: 1.125rem;
   line-height: 1.625rem;
   letter-spacing: -0.05625rem;
+  flex-wrap: wrap;
+
   h3 {
     font-weight: 500;
   }
@@ -119,9 +122,44 @@ main {
   cursor: pointer;
 }
 
+.label-desktop {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .product-info {
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .label-desktop {
+    display: block;
+  }
+  .product-info {
+    justify-content: unset;
+    align-items: center;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .left {
+    width: 100%;
+  }
+  .wrapper-title {
+    @extend .wrapper;
+    justify-content: unset;
+  }
+  .purchase {
+    width: unset;
+    margin-bottom: 0;
+  }
+  .subtotal {
+    justify-content: flex-end;
+    gap: 2rem;
   }
 }
