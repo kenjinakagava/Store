@@ -1,14 +1,22 @@
 import styles from "./AddToCartButton.module.scss";
 import Cart from "../../assets/svgs/Cart.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext, CartItem } from "../../contexts/CartContext";
 import { useTranslation } from "react-i18next";
+import Toast from "../Toast/Toast";
 
 interface AddToCartButtonProps extends CartItem {
   loading?: "lazy" | "eager";
 }
 
 const AddToCartButton = (props: AddToCartButtonProps) => {
+  const [showToast, setShowToast] = useState(false);
+  console.log(showToast);
+  const handleToast = () => {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
   const { cartItems, setCartItems } = useContext(CartContext);
 
   const { t } = useTranslation();
@@ -35,13 +43,16 @@ const AddToCartButton = (props: AddToCartButtonProps) => {
     } else {
       setCartItems((previousCartItems) => [...previousCartItems, newItem]);
     }
+    handleToast();
   };
   return (
     <>
       <button
         aria-label={`${t("Add item to cart")}`}
         className={styles.button}
-        onClick={() => addToCart(props)}
+        onClick={() => {
+          addToCart(props);
+        }}
       >
         <span className={styles.description}>{t("Add item to cart")}</span>
         <img
@@ -53,6 +64,7 @@ const AddToCartButton = (props: AddToCartButtonProps) => {
           loading={props.loading ? props.loading : "lazy"}
         />
       </button>
+      <Toast text={t("Item added to cart")} showToast={showToast} />
     </>
   );
 };
