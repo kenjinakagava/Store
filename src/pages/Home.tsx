@@ -1,7 +1,7 @@
-import Header from "../components/Header/Header";
-import Hero from "../components/Hero/Hero";
-import Nav from "../components/Nav/Nav";
-import ProductsSection from "../components/ProductsSection/ProductsSection";
+import Header from "../layouts/Header/Header";
+import Hero from "../layouts/Hero/Hero";
+import Nav from "../layouts/Nav/Nav";
+import ProductsSection from "../layouts/ProductsSection/ProductsSection";
 
 const Home = () => {
   return (

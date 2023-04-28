@@ -1,6 +1,6 @@
 import styles from "./ProductPage.module.scss";
-import Header from "../../components/Header/Header";
-import Nav from "../../components/Nav/Nav";
+import Header from "../../layouts/Header/Header";
+import Nav from "../../layouts/Nav/Nav";
 import { productsApiProps } from "../../interfaces/Product";
 import QuantitySelector from "../../components/QuantitySelector/QuantitySelector";
 import AddToCartButton from "../../components/AddToCartButton/AddToCartButton";

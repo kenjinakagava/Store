@@ -39,16 +39,18 @@ const CartProduct = (item: CartProductProps) => {
           <h2 className={styles["product-title"]}>{item.title}</h2>
         </div>
         <div className={styles.wrapper}>
-          <span className={styles.price}>{`${symbol} ${
+          <span className={styles.price}>{`${symbol} ${(
             item.price * exchangeRate
-          }`}</span>
+          ).toFixed(2)}`}</span>
           <MediaQuery minWidth={1024}>
             <QuantitySelector quantity={item.quantity} id={item.id} />
           </MediaQuery>
           <MediaQuery minWidth={1024}>
-            <span className={styles.price}>{`${symbol} ${
-              item.price * exchangeRate * item.quantity
-            }`}</span>
+            <span className={styles.price}>{`${symbol} ${(
+              item.price *
+              exchangeRate *
+              item.quantity
+            ).toFixed(2)}`}</span>
           </MediaQuery>
         </div>
       </div>

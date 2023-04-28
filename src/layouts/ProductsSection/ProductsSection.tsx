@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { useProductsApi } from "../../hooks/useProductsApi";
 import { productsApiProps } from "../../interfaces/Product";
-import CategoryToggler from "../CategoryToggler/CategoryToggler";
-import CategoryTogglerMobile from "../CategoryTogglerMobile/CategoryTogglerMobile";
-import ProductsCard from "../ProductsCard/ProductsCard";
+import CategoryToggler from "../../components/CategoryToggler/CategoryToggler";
+import CategoryTogglerMobile from "../../components/CategoryTogglerMobile/CategoryTogglerMobile";
+import ProductsCard from "../../components/ProductsCard/ProductsCard";
 import styles from "./ProductsSection.module.scss";
 import MediaQuery from "react-responsive";
 

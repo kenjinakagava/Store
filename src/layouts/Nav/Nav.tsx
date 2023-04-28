@@ -2,8 +2,8 @@ import styles from "./Nav.module.scss";
 import Logo from "../../assets/svgs/logo.svg";
 import { useState } from "react";
 import Cart from "../../assets/svgs/Cart.svg";
-import HamburgerButton from "../HamburgerMenu/HamburgerButton";
-import MobileMenu from "../MobileMenu/MobileMenu";
+import HamburgerButton from "../../components/HamburgerMenu/HamburgerButton";
+import MobileMenu from "../../components/MobileMenu/MobileMenu";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 

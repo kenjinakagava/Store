@@ -1,5 +1,5 @@
-import HeroTransparentCard from "../HeroTransparentCard/HeroTransparentCard";
 import styles from "./Hero.module.scss";
+import HeroTransparentCard from "../../components/HeroTransparentCard/HeroTransparentCard";
 
 const Hero = () => {
   return (

@@ -46,41 +46,13 @@ main {
   padding-bottom: 1rem;
 }
 
-.product {
-  margin-top: 2.25rem;
-}
-
-.product-info {
-  display: flex;
-}
-
-.product-title {
-  font-size: 1.25rem;
-  padding-right: 1rem;
-}
-
-.product-preview {
-  width: 5.84625rem;
-  max-height: 4.375rem;
-  padding-right: 1rem;
-}
-
-.product-control {
-  display: flex;
-}
-
-.product-remove {
-  margin-right: auto;
-  font-size: 1.125rem;
-  line-height: 1.625rem;
-  letter-spacing: -0.05625rem;
-  text-decoration: underline;
-  color: $primary;
-}
-
 .products-list {
   padding-bottom: 1.875rem;
   border-bottom: 1px solid #e5e5e5;
+}
+
+.empty {
+  padding-top: 1.875rem;
 }
 
 .subtotal {
@@ -126,20 +98,9 @@ main {
   display: none;
 }
 
-@media (min-width: 768px) {
-  .product-info {
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
 @media (min-width: 1024px) {
   .label-desktop {
     display: block;
-  }
-  .product-info {
-    justify-content: unset;
-    align-items: center;
   }
   .wrapper {
     display: flex;

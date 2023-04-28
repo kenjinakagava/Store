@@ -1,14 +1,10 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import translationEN from "./locales/en/translation.json";
 import translationPTBR from "./locales/ptbr/translation.json";
 
 const language = localStorage.getItem("language");
 
 const resources = {
-  en: {
-    translation: translationEN,
-  },
   ptbr: {
     translation: translationPTBR,
   },
