@@ -1,15 +1,19 @@
 import styles from "./Nav.module.scss";
 import Logo from "../../assets/svgs/logo.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Cart from "../../assets/svgs/Cart.svg";
 import HamburgerButton from "../../components/HamburgerMenu/HamburgerButton";
-import MobileMenu from "../../components/MobileMenu/MobileMenu";
+import MobileMenu from "../../components/Menu/Menu";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../contexts/CartContext";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
+
+  const { cartItems } = useContext(CartContext);
+
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
@@ -38,6 +42,9 @@ const Nav = () => {
               decoding="async"
               aria-hidden="true"
             />
+            <div className={styles.counter}>
+              {cartItems.length > 0 ? cartItems.length : null}
+            </div>
           </Link>
         </div>
         <MobileMenu isMenuOpen={isMenuOpen} />

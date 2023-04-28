@@ -33,10 +33,10 @@ const CartProduct = (item: CartProductProps) => {
         <div className={styles["wrapper-title"]}>
           <img
             src={item.image}
-            alt={`${item.quantity} units of ${item.title}`}
+            alt={`${item.quantity} units of ${t(item.title)}`}
             className={styles["product-preview"]}
           />
-          <h2 className={styles["product-title"]}>{item.title}</h2>
+          <h2 className={styles["product-title"]}>{t(item.title)}</h2>
         </div>
         <div className={styles.wrapper}>
           <span className={styles.price}>{`${symbol} ${(

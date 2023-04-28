@@ -30,6 +30,7 @@ const Icon = (props: IconProps) => {
         height={30}
         decoding="async"
         loading={props.loading ? props.loading : "lazy"}
+        aria-hidde={true}
       />
     </a>
   );

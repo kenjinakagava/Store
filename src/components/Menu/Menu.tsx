@@ -1,14 +1,14 @@
 import classNames from "classnames";
-import styles from "./MobileMenu.module.scss";
+import styles from "./Menu.module.scss";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-interface MobileMenuProps {
+interface MenuProps {
   isMenuOpen: boolean;
 }
 
-const MobileMenu = ({ isMenuOpen }: MobileMenuProps) => {
-  const { t, i18n } = useTranslation();
+const Menu = ({ isMenuOpen }: MenuProps) => {
+  const { i18n } = useTranslation();
 
   const language = localStorage.getItem("language");
 
@@ -41,4 +41,4 @@ const MobileMenu = ({ isMenuOpen }: MobileMenuProps) => {
   );
 };
 
-export default MobileMenu;
+export default Menu;
