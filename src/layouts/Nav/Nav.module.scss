@@ -65,9 +65,19 @@ nav {
   }
 }
 
+@media (min-width: 768px) {
+  .counter {
+    top: -0.125rem;
+    left: 1.75rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .description {
     display: inline;
+  }
+  .counter {
+    left: 6.75rem;
   }
 }
 
